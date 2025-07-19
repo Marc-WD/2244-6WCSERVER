@@ -1,24 +1,21 @@
-const { add, subtract, multiply, divide } = require('./calculation');
+const calculator = require('./calculations.js');
 
-const ratePerHour = 300;
-const hoursPerDay = 4;
-const daysWorked = 6;
+var sss = 1100;
+var pagIbig = 400;
+var philHealth = 500;
 
-const grossIncome = multiply(ratePerHour, multiply(hoursPerDay, daysWorked));
-console.log("Gross Income:", grossIncome);
+var result = calculator.multiply(500, 8);
+var gross = calculator.multiply(result, 5);
+var tax = calculator.divide(gross, 10);
+var deduct = calculator.add(sss, pagIbig);
+var deduct2 = calculator.add(tax, philHealth);
+var totalded = calculator.add(deduct, deduct2);
+var netSalary = calculator.subtract(gross, totalded);
 
-const tax = multiply(grossIncome, 0.10);
-const sss = 1200;
-const pagibig = 300;
-const philhealth = 400;
-
-const totalDeductions = add(add(add(tax, sss), pagibig), philhealth);
+console.log("Gross income is", gross);
 console.log("Tax:", tax);
 console.log("SSS:", sss);
-console.log("Pag-Ibig:", pagibig);
-console.log("PhilHealth:", philhealth);
-console.log("Total Deductions:", totalDeductions);
-
-const netSalary = subtract(grossIncome, totalDeductions);
+console.log("Pag-Ibig fund:", pagIbig);
+console.log("PhilHealth:", philHealth);
+console.log("Total deductions:", totalded);
 console.log("Net Salary:", netSalary);
-
