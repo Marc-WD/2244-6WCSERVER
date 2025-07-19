@@ -1,4 +1,4 @@
-const calculator = require('./calculations.js');
+const calculator = require('./calculation.js');
 
 var sss = 1100;
 var pagIbig = 400;
