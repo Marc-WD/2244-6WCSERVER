@@ -1,21 +1,25 @@
 const calculator = require('./calculation.js');
 
-var sss = 1100;
-var pagIbig = 400;
-var philHealth = 500;
+var ratePerHour = 300;
+var hoursPerDay = 4;
+var daysWorked = 6;
 
-var dailyPay = calculator.multiply(500, 8);
-var gross = calculator.multiply(dailyPay, 5);
-var tax = calculator.divide(gross, 10);
-var deductionPart1 = calculator.add(sss, pagIbig);
-var deductionPart2 = calculator.add(tax, philHealth);
-var totalDeductions = calculator.add(deductionPart1, deductionPart2);
-var netSalary = calculator.subtract(gross, totalDeductions);
+var totalHours = calculator.multiply(hoursPerDay, daysWorked);
+var grossIncome = calculator.multiply(ratePerHour, totalHours);
+var tax = calculator.multiply(grossIncome, 0.10);
+var sss = 1200;
+var pagIbig = 300;
+var philHealth = 400;
 
-console.log("Gross Income: ₱" + gross);
-console.log("Tax (10%): ₱" + tax);
+var part1 = calculator.add(sss, pagIbig);
+var part2 = calculator.add(tax, philHealth);
+var totalDeductions = calculator.add(part1, part2);
+var netSalary = calculator.subtract(grossIncome, totalDeductions);
+
+console.log("Gross Income: ₱" + grossIncome);
+console.log("Tax: ₱" + tax);
 console.log("SSS: ₱" + sss);
-console.log("Pag-Ibig Fund: ₱" + pagIbig);
+console.log("Pag-Ibig fund: ₱" + pagIbig);
 console.log("PhilHealth: ₱" + philHealth);
 console.log("Total Deductions: ₱" + totalDeductions);
 console.log("Net Salary: ₱" + netSalary);
