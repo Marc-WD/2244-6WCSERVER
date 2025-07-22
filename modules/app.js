@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
     }
 
     // Footer: name, date, and section
-    res.write('<br><br><small>John Smith - July 22, 2025 - BSCS 3A</small>');
+    res.write('<br><br><small>Canlas, Marc O. - July 22, 2025 - WD - 304</small>');
     res.end();
 });
 
