@@ -10,11 +10,11 @@ const server = http.createServer((req, res) => {
 
     if (req.url === '/') {
         res.write(root('John Smith'));
-    } else if (req.url === '/about') {
+    } else if (req.url === '/about_module') {
         res.write(about('John Smith'));
-    } else if (req.url === '/contact') {
+    } else if (req.url === '/contact_module') {
         res.write(contact('John Smith'));
-    } else if (req.url === '/gallery') {
+    } else if (req.url === '/gallery_module') {
         res.write('<h1>This is the Gallery Page</h1>');
     } else {
         res.write('Invalid Request');
