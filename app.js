@@ -1,34 +1,31 @@
-var http = require('http');
+const http = require('http');
+const root = require('./root');
+const about = require('./about');
+const contact = require('./contact');
 
-var root = require('./modules/root_module');
-var about = require('./modules/about_module');
-var contact = require('./modules/contact_module');
-var gallery = require('./modules/gallery_module');
+const port = 5000;
 
-var server = http.createServer(function (req, res) {
-    var name = "John Smith";
-    if (req.url == '/') {
-        res.end(root(name));
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+
+    if (req.url === '/') {
+        res.write(root('John Smith'));
+    } else if (req.url === '/about') {
+        res.write(about('John Smith'));
+    } else if (req.url === '/contact') {
+        res.write(contact('John Smith'));
+    } else if (req.url === '/gallery') {
+        res.write('<h1>This is the Gallery Page</h1>');
+    } else {
+        res.write('Invalid Request');
     }
 
-    else if  (req.url == "/about") {
-        res.end(about(name));
-    }
+    // Add your name, date, section
+    res.write('<br><br><small>John Smith - July 22, 2025 - BSCS 3A</small>');
 
-    else if  (req.url == "/contact") {
-
-        res.end(contact(name));
-    }
-
-    else if  (req.url == "/gallery") {
-
-        res.end(gallery(name));
-    }
-
-    else {
-    res.end('Invalid Request!');
-    }
+    res.end();
 });
 
-server.listen(5002);
-console.log('Node.js web server at port 5002 is running...')
+server.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
+});
