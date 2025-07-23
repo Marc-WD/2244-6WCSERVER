@@ -1,5 +1,9 @@
-[
-  { "ID": "1", "First Name": "Marc", "Last Name": "Canlas", "age": 20 },
-  { "ID": "2", "First Name": "Joemar", "Last Name": "Catipon", "age": 19 },
-  { "ID": "3", "First Name": "Aimee", "Last Name": "Pangan", "age": 20 }
-]
+// Data/data.js
+const data = [
+  { ID: "1", "First Name": "Marc", "Last Name": "Canlas", age: 20 },
+  { ID: "2", "First Name": "Joemar", "Last Name": "Catipon", age: 19 },
+  { ID: "3", "First Name": "Aimee", "Last Name": "Pangan", age: 20 }
+];
+
+module.exports = data;
+
