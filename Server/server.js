@@ -20,7 +20,7 @@ const server = http.createServer((req, res) => {
     res.end(JSON.stringify(people));
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
-    res.end('Not found');
+    res.end('Welcome! Try accessing /people to see the list.');
   }
 });
 
