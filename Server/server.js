@@ -4,12 +4,12 @@ const fs = require('fs');
 const path = require('path');
 
 const Person = require('../Person/person');
-const { log } = require('../Logs/logger');
+const { log } = require('../Logs/logs');
 
 const app = express();
 const PORT = 3000;
 
-const dataPath = path.join(__dirname, '../Data/mockData.json');
+const dataPath = path.join(__dirname, '../Data/data.json');
 const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
 
 app.get('/people', (req, res) => {
