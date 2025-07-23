@@ -1,1 +1,7 @@
-{ ID: "1", "First Name": "Marc", "Last Name": "Canlas", age: 20 },
+// Logs/logs.js
+function log(message) {
+  const timestamp = new Date().toISOString();
+  console.log(`[${timestamp}] ${message}`);
+}
+
+module.exports = { log };
