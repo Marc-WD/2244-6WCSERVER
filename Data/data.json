@@ -1,4 +1,3 @@
-// Data/data.js
 const data = [
   { ID: "1", "First Name": "Marc", "Last Name": "Canlas", age: 20 },
   { ID: "2", "First Name": "Joemar", "Last Name": "Catipon", age: 19 },
