@@ -1,16 +1,11 @@
 // Server/server.js
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
-
 const Person = require('../Person/person');
 const { log } = require('../Logs/logs');
+const data = require('../Data/data');
 
 const app = express();
 const PORT = 3000;
-
-const dataPath = path.join(__dirname, '../Data/data.json');
-const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
 
 app.get('/people', (req, res) => {
   log(`GET /people`);
@@ -26,3 +21,4 @@ app.get('/people', (req, res) => {
 app.listen(PORT, () => {
   log(`Server is running at http://localhost:${PORT}`);
 });
+
