@@ -1,11 +1,15 @@
+// Person/person.js
 class Person {
-  constructor(name, age) {
-    this.name = name;
+  constructor(id, firstName, lastName, age) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.age = age;
   }
 
   greet() {
-    return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+    return `ID: ${this.id} | Name: ${this.firstName} ${this.lastName} | Age: ${this.age}`;
   }
 }
+
 module.exports = Person;
