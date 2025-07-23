@@ -1,6 +1,6 @@
-// Author: John Smith
+// Author: Marc Canlas
 // Date: July 22, 2025
-// Section: BSCS 3A
+// Section: WD-304
 
 const http = require('http');
 const rootPage = require('./rootPage');
